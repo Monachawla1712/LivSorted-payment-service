@@ -10,7 +10,6 @@
 	<groupId>com.sorted.rest.services.payment</groupId>
 	<artifactId>sorted-payment-service</artifactId>
 
-	
 
 	<dependencies>
 		<dependency>
