@@ -1,5 +1,8 @@
 name: Auto build and deploy on prod
 
+permissions:
+  issues: write
+
 on:
   push:
     branches: [ "new-vpc-main" ]
@@ -58,7 +61,7 @@ jobs:
         uses: trstringer/manual-approval@v1.8.0
         timeout-minutes: 5
         with:
-          approvers: "Monachawla1712" #${{ secrets.APPROVERS }}
+          approvers: ${{ secrets.APPROVERS }}
           secret: ${{ github.TOKEN }}
           minimum-approvals: 1
           exclude-workflow-initiator-as-approver: false
