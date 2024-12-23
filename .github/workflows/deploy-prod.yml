@@ -1,7 +1,7 @@
 name: Auto build and deploy on prod
 
-permissions:
-  issues: write
+# permissions:
+  # issues: write
 
 on:
   push:
@@ -57,14 +57,14 @@ jobs:
             echo "Build Failed !!!!!"
             exit 1;        
           fi
-      - name: Request pg-prod deployment approval
-        uses: trstringer/manual-approval@v1.8.0
-        timeout-minutes: 5
-        with:
-          approvers: ${{ secrets.APPROVERS }}
-          secret: ${{ github.TOKEN }}
-          minimum-approvals: 1
-          exclude-workflow-initiator-as-approver: false
+      # - name: Request pg-prod deployment approval
+      #   uses: trstringer/manual-approval@v1.8.0
+      #   timeout-minutes: 5
+      #   with:
+      #     approvers: ${{ secrets.APPROVERS }}
+      #     secret: ${{ github.TOKEN }}
+      #     minimum-approvals: 1
+      #     exclude-workflow-initiator-as-approver: false
 
       - name: Code Deploy
         run: |
