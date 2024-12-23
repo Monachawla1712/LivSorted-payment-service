@@ -54,11 +54,11 @@ jobs:
             echo "Build Failed !!!!!"
             exit 1;        
           fi
-      - name: Request auth-prod deployment approval
+      - name: Request pg-prod deployment approval
         uses: trstringer/manual-approval@v1.8.0
         timeout-minutes: 5
         with:
-          approvers: ${{ secrets.APPROVERS }}
+          approvers: "Monachawla1712" #${{ secrets.APPROVERS }}
           secret: ${{ github.TOKEN }}
           minimum-approvals: 1
           exclude-workflow-initiator-as-approver: false
